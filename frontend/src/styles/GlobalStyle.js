@@ -7,6 +7,8 @@ const GlobalStyle = createGlobalStyle`
   --font-family-project: Montserrat, sans-serif, -apple-system;
 
     /* font size */
+
+  --font-size-xs: 0.875rem; /* 14px */
   --font-size-s: 1rem; /* 16px */
   --font-size-m: 1.25rem; /* 20px */
   --font-size-l: 1.5rem; /* 24px */ 
