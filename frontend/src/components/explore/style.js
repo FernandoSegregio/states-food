@@ -14,17 +14,21 @@ export const ExploreContainer = styled.div`
 `;
 
 export const RestaurantImg = styled.img`
-  height: 120px;
+  margin-top: -10px;
+  height: 137px;
   object-fit: cover;
   width: 100%;
 `;
 
-export const CardRestaurant = styled.section`
+export const CardRestaurant = styled.button`
+  border: none;
+  background-color: transparent;
   box-shadow: 0px 6px 24px 3px rgba(0, 0, 0, 0.25);
-  height: 200px;
+  height: 210px;
   width: 92%;
 `;
 export const TextContainer = styled.div`
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   width: 60%;
@@ -35,7 +39,7 @@ export const TextContainer = styled.div`
       display: flex;
       font-size: var(--font-size-xs);
       justify-content: flex-start;
-      margin-top: 4px;
+      margin-top: 2px;
       font-weight: 300;
 
         span {
