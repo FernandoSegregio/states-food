@@ -45,7 +45,7 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-    font-family: Montserrat, -apple-system, sans-serif;
+    font-family: Roboto, -apple-system, sans-serif;
     margin: 0;
     padding: 0;
   }
