@@ -44,12 +44,11 @@ function Login() {
           onChange={handleChange}
         />
         <button
-          onClick={() => { navigate('/register'); }}
+          onClick={() => { navigate('/explore'); }}
           type="button"
           disabled={isDisabled}
         >
           Entrar
-
         </button>
       </form>
     </LoginContainer>

@@ -5,6 +5,7 @@ import {
   Navigate,
 } from 'react-router-dom';
 import Login from './components/login';
+import Explore from './components/explore';
 import GlobalStyle from './styles/GlobalStyle';
 
 function App() {
@@ -13,8 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
-        {' '}
-        {/* <Route path="/table" element={<Search />} /> */}
+        <Route path="/explore" element={<Explore />} />
       </Routes>
       <GlobalStyle />
     </>
