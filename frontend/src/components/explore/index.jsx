@@ -1,5 +1,6 @@
-import React from 'react';
-import mockRest from './mock';
+import React, { useState, useEffect } from 'react';
+import { nanoid } from 'nanoid';
+import getItems from '../../services/axiosRequest';
 import {
   CardRestaurant,
   DescriptionRestaurant,
@@ -11,13 +12,25 @@ import {
 } from './style';
 
 function Explore() {
+  const [restaurant, setRestaurant] = useState([]);
+
+  async function requestItems() {
+    const item = await getItems('/restaurant');
+    setRestaurant([...item]);
+    console.log(item);
+  }
+
+  useEffect(() => {
+    requestItems();
+  }, []);
+
   return (
     <ExploreContainer>
-      { mockRest.map(({
-        image, description, flag, name, rate, time, delivery,
+      { restaurant.length && restaurant.map(({
+        url_image: imageUrl, description, flag, name, rate, time, delivery,
       }) => (
-        <CardRestaurant>
-          <RestaurantImg src={image} alt={name} />
+        <CardRestaurant key={nanoid()}>
+          <RestaurantImg src={imageUrl} alt={name} />
           <div>
             <FlagImg src={flag} alt="" />
             <TextContainer>
