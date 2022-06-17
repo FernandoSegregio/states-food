@@ -1,21 +1,74 @@
 import { PrismaClient } from '@prisma/client'
+import md5 from 'md5'
 
 const prisma = new PrismaClient()
+const secretPassword = md5("123Fred")
 
 const userData = [
   {
     email: 'fred@graodireto.com.br',
-    password: '123Fred',
+    password: secretPassword,
   },
 ]
 
+const restaurantData = [
+  {
+    address: 'Rua inconfidentes, Interior de Minas, 399',
+    delivery: 'R$ 4,99',
+    description: 'Comida Mineira',
+    flag: "http://localhost:3001/images/MG.png",
+    url_image: "http://localhost:3001/images/mineira.jpg",
+    name: 'O Trem Baum Sô',
+    phone: '31999995555',
+    rate: 5,
+    time: '20-30min',
+  },
+  {
+    address: 'Rua dos Gauchos, Sem Numero',
+    delivery: 'R$ 8,99',
+    description: 'Comida Gaucha',
+    flag: "http://localhost:3001/images/RS.png",
+    url_image: "http://localhost:3001/images/gaucha.jpg",
+    name: 'Churrasco Tchêê',
+    phone: '51999995555',
+    rate: 4.5,
+    time: '40-50min',
+  },
+  {
+    address: 'Rua Pernambuco, 882',
+    delivery: 'R$ 6,99',
+    description: 'Comida Pernambucana',
+    flag: "http://localhost:3001/images/PE.png",
+    url_image: "http://localhost:3001/images/nordeste.jpg",
+    name: 'O Nordeste é Aqui',
+    phone: '81999998888',
+    rate: 4.9,
+    time: '30-40min',
+  },
+]
+
+const menuData = [
+  {
+    name: "",
+    description: "",
+    price: "",
+    restaurantId: "",
+  }
+]
+
 async function main() {
-  console.log(`Start seeding ...`)
-  for (const u of userData) {
-    const user = await prisma.user.create({
-      data: u,
+  // console.log(`Start seeding ...`)
+  // for (const u of userData) {
+  //   const user = await prisma.user.create({
+  //     data: u,
+  //   })
+  //   console.log(`Created user with id: ${user.id}`)
+  // }
+  for (const r of restaurantData) {
+    const restaurant = await prisma.restaurant.create({
+      data: r,
     })
-    console.log(`Created user with id: ${user.id}`)
+    console.log(`Created restaurant with id: ${restaurant.id}`)
   }
   console.log(`Seeding finished.`)
 }
