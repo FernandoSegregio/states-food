@@ -7,8 +7,30 @@ const api = axios.create({
 const getItems = async (path) => {
   const { data } = await api.get(`${path}`)
     .catch((error) => error.response);
-
   return data;
 };
 
-export default getItems;
+const postItems = async (path, body, auth) => {
+  if (!auth) {
+    const { data, status } = await api.post(`${path}`, body)
+      .catch((error) => error.response);
+    return { data, status };
+  }
+
+  if (!body) {
+    const { data } = await api
+      .post(`${path}`, {}, { headers: { Authorization: auth } })
+      .catch((error) => error.response);
+    return data;
+  }
+
+  if (body && auth) {
+    const { data } = await api
+      .post(`${path}`, body, { headers: { Authorization: auth } })
+      .catch((error) => error.response);
+    return data;
+  }
+  return null;
+};
+
+export { getItems, postItems };
