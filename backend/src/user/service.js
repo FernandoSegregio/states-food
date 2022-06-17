@@ -19,7 +19,8 @@ class User {
     try {
       const secretPassword = md5(password);
       const verifyUser = await this.find(email);
-      if (!verifyUser) return { code: 404, message: 'user not found' };
+      console.log(verifyUser);
+      if (verifyUser.code === 404) return { code: 404, message: 'user not found' };
       if (verifyUser.user.password !== secretPassword) {
         return { code: 400, message: 'invalid password' };
       }
