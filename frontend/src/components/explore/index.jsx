@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
-import getItems from '../../services/axiosRequest';
+import { getItems } from '../../services/axiosRequest';
 import {
   CardRestaurant,
   DescriptionRestaurant,
@@ -26,7 +26,7 @@ function Explore() {
 
   return (
     <ExploreContainer>
-      { restaurant.length && restaurant.map(({
+      { restaurant && restaurant.map(({
         url_image: imageUrl, description, flag, name, rate, time, delivery,
       }) => (
         <CardRestaurant key={nanoid()}>
