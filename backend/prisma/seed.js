@@ -57,13 +57,13 @@ const menuData = [
 ]
 
 async function main() {
-  // console.log(`Start seeding ...`)
-  // for (const u of userData) {
-  //   const user = await prisma.user.create({
-  //     data: u,
-  //   })
-  //   console.log(`Created user with id: ${user.id}`)
-  // }
+  console.log(`Start seeding ...`)
+  for (const u of userData) {
+    const user = await prisma.user.create({
+      data: u,
+    })
+    console.log(`Created user with id: ${user.id}`)
+  }
   for (const r of restaurantData) {
     const restaurant = await prisma.restaurant.create({
       data: r,
