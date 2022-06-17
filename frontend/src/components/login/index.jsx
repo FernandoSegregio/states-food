@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { postItems } from '../../services/axiosRequest';
 import LoginContainer from './style';
 
 function Login() {
@@ -14,6 +15,13 @@ function Login() {
   };
 
   const navigate = useNavigate();
+
+  async function doLogin(e) {
+    e.preventDefault();
+    const user = await postItems('/login', login);
+    if (user.status === 200) return navigate('/explore');
+    return user;
+  }
 
   useEffect(() => {
     const PASS_LENGTH = 6;
@@ -30,7 +38,7 @@ function Login() {
         <h3>Faça seu login, e </h3>
         <h1>conheça os melhores Restaurantes</h1>
       </div>
-      <form>
+      <form onSubmit={(e) => doLogin(e)}>
         <input
           type="text"
           name="email"
@@ -44,8 +52,7 @@ function Login() {
           onChange={handleChange}
         />
         <button
-          onClick={() => { navigate('/explore'); }}
-          type="button"
+          type="submit"
           disabled={isDisabled}
         >
           Entrar
