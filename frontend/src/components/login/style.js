@@ -2,21 +2,21 @@ import styled from 'styled-components';
 import imgLogin from '../../images/background-login.jpeg';
 
 const LoginContainer = styled.div`
-  background-image: url(${imgLogin});
-  background-color: #00000078;
+  align-items: center;
   background-blend-mode: darken;
+  background-color: #00000078;
+  background-image: url(${imgLogin});
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
-  height: 100vh;
-  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  height: 100vh;
+  justify-content: space-around;
+  width: 100%;
 
     div {
-      width: 320px;
       padding-left: 30px;
+      width: 320px;
     }
 
     h3 {
@@ -30,30 +30,29 @@ const LoginContainer = styled.div`
     }
 
     form {
-      margin-top: -60px;
+      align-items: center;
       backdrop-filter: blur(1.6679px);
       background: linear-gradient(180deg, rgba(29, 37, 39, 0.6) 15.42%, rgba(29, 37, 39, 0.552) 35.73%, rgba(29, 37, 39, 0.156) 78.67%, rgba(29, 37, 39, 0) 100%);
-      height: 359px;
-      align-items: center;
-      height: 280px;
-      width: 80%;
       display: flex;
       flex-direction: column;
+      height: 280px;
+      height: 359px;
       justify-content: center;
       row-gap: 15px;
+      width: 80%;
     }
 
     input {
-      width: 80%;
-      height: 50px;
       font-size: var(--font-size-s);
+      height: 50px;
       padding-left: 15px;
+      width: 80%;
     }
 
     button {
-      width: 80%;
-      height: 50px;
       font-size: var(--font-size-s);
+      height: 50px;
+      width: 80%;
     }
 `;
 
