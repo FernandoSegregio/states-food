@@ -15,9 +15,9 @@ function Explore() {
   const [restaurant, setRestaurant] = useState([]);
 
   async function requestItems() {
-    const item = await getItems('/restaurant');
+    const token = JSON.parse(localStorage.getItem('token'));
+    const item = await getItems('/restaurant', token);
     setRestaurant([...item]);
-    console.log(item);
   }
 
   useEffect(() => {
