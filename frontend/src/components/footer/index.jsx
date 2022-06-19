@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import FooterContainer, { SearchBar } from './style';
+// import { useNavigate } from 'react-router-dom';
+import { FooterContainer, SearchBar } from './style';
 
 function Footer() {
-  const [openSearch, setopenSearch] = useState(true);
-  const navigate = useNavigate();
+  const [isDisable, setIsDisable] = useState(true);
+  // const navigate = useNavigate();
 
   function openSearchBar() {
-    return openSearch
-      ? setopenSearch(false)
-      : setopenSearch(true);
+    return isDisable
+      ? setIsDisable(false)
+      : setIsDisable(true);
   }
 
   return (
     <FooterContainer>
-      <button type="button" onClick={navigate('/explore')}>
+      <button type="button">
         <span className="iconify" data-icon="charm:home" />
       </button>
       <button type="button">
@@ -26,7 +26,7 @@ function Footer() {
       <button type="button">
         <span className="iconify" data-icon="iconoir:profile-circled" />
       </button>
-      <input type="text" disabled={openSearch} placeholder="teste" />
+      <SearchBar type="text" hidden={isDisable} placeholder="Pesquise por um Restaurante ou Prato" />
     </FooterContainer>
   );
 }
