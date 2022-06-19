@@ -6,6 +6,7 @@ export const ExploreContainer = styled.div`
   align-items: center;
   flex-direction: column;
   row-gap: 14px;
+  margin-bottom: 80px;
 
     div {
       display: flex;
