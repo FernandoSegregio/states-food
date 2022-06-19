@@ -3,6 +3,8 @@ import imgLogin from '../../images/background-login.jpeg';
 
 const LoginContainer = styled.div`
   background-image: url(${imgLogin});
+  background-color: #00000078;
+  background-blend-mode: darken;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
