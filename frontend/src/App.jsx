@@ -5,19 +5,15 @@ import {
   Navigate,
 } from 'react-router-dom';
 import Login from './components/login';
-import Explore from './components/explore';
-import GlobalStyle from './styles/GlobalStyle';
+import ExplorePage from './pages/ExplorePage';
 
 function App() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/explore" element={<Explore />} />
-      </Routes>
-      <GlobalStyle />
-    </>
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/explore" element={<ExplorePage />} />
+    </Routes>
   );
 }
 
