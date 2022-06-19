@@ -16,9 +16,10 @@ function Login() {
 
   const navigate = useNavigate();
 
-  async function doLogin(e) {
+  async function handleLogin(e) {
     e.preventDefault();
     const user = await postItems('/login', login);
+    localStorage.setItem('token', JSON.stringify(user.data));
     if (user.status === 200) return navigate('/explore');
     return user;
   }
@@ -38,7 +39,7 @@ function Login() {
         <h3>Faça seu login, e </h3>
         <h1>conheça os melhores Restaurantes</h1>
       </div>
-      <form onSubmit={(e) => doLogin(e)}>
+      <form onSubmit={(e) => handleLogin(e)}>
         <input
           type="text"
           name="email"
