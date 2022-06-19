@@ -4,8 +4,8 @@ const api = axios.create({
   baseURL: 'http://localhost:3001',
 });
 
-const getItems = async (path) => {
-  const { data } = await api.get(`${path}`)
+const getItems = async (path, auth) => {
+  const { data } = await api.get(`${path}`, { headers: { Authorization: auth } })
     .catch((error) => error.response);
   return data;
 };
