@@ -48,7 +48,7 @@ export const TextContainer = styled.div`
         }
 
         svg {
-          color: rgb(172, 57, 57);
+          color: #cc1a39;
           margin-right: 1.5px;
         }
 
