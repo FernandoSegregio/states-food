@@ -14,9 +14,12 @@ export const MenuContainer = styled.section`
 `;
 
 export const Menu = styled.section`
-  box-shadow: 0px 6px 24px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 25%);
+  margin-top: 12px;
+
 
   p {
+      color: #808080;
       margin-left: 5.5%;
       margin-top: 20px;
     }
@@ -53,11 +56,14 @@ export const RestaurantImgMenu = styled(RestaurantImg)`
 `;
 
 export const TextContainerTitleMenu = styled(TextContainer)`
-  display: flex;
-  width: 100%;
   align-items: center;
+  box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 25%);
+  color: #808080;
+  display: flex;
   padding: 4%;
+  text-align: center;
   position: relative;
+  width: 100%;
 `;
 
 export const FlagImgMenu = styled(FlagImg)`
@@ -68,6 +74,7 @@ position: absolute;
 
 export const NameRestaurantMenu = styled(NameRestaurant)`
   font-size: var(--font-size-s);
+  letter-spacing: 0.5px;
 `;
 
 export const DescriptionRestaurantMenu = styled(DescriptionRestaurant)`
@@ -79,24 +86,26 @@ export const Details = styled.div`
   display: flex;
 
   p {
-      font-size: var(--font-size-xs);
-      margin: 0;
       color: rgb(172, 57, 57);
+      font-size: var(--font-size-xxs);
+      margin: 0;
+      width: 52%;
     }
 `;
 
 export const TextCard = styled.div`
   width: 200px;
-  word-wrap: break-word;
 
     h1 {
       font-size: var(--font-size-x);
       font-weight: normal;
+      color: #808080;
     }
     
     p {
       font-size: var(--font-size-xxs);
+      width: 80%;
       margin: 0;
-      color: #000;
+      color: #808080;
     }
 `;
