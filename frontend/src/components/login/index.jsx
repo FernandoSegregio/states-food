@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { postItems } from '../../services/axiosRequest';
 import { LoginContainer, Message } from './style';
+import StatesFoodsContext from '../../context/StatesFoodsContext';
 
 function Login() {
   const [login, setLogin] = useState({ email: '', password: '' });
   const [isDisabled, setIsDisabled] = useState(true);
   const [statusLogin, setStatusLogin] = useState('');
+
+  const { setNameUser, setLat, setLng } = useContext(StatesFoodsContext);
 
   const handleChange = ({ target: { name, value } }) => {
     setLogin((prevState) => ({
@@ -20,6 +23,7 @@ function Login() {
   async function handleLogin(e) {
     e.preventDefault();
     const user = await postItems('/login', login);
+    localStorage.setItem('user', JSON.stringify(login));
     localStorage.setItem('token', JSON.stringify(user.data));
     if (user.data.message) setStatusLogin(user.data.message);
     if (user.status === 200) return navigate('/restaurants');
@@ -34,6 +38,23 @@ function Login() {
     const validatePassword = password.length >= PASS_LENGTH;
     setIsDisabled(!(validateMail && validatePassword));
   }, [login]);
+
+  async function geoLocation() {
+    navigator.geolocation.getCurrentPosition((local) => {
+      setLat(local.coords.latitude);
+      setLng(local.coords.longitude);
+    });
+  }
+
+  function getName() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    setNameUser(user.email.split('@')[0]);
+  }
+
+  useEffect(() => {
+    geoLocation();
+    getName();
+  }, []);
 
   return (
     <LoginContainer>
