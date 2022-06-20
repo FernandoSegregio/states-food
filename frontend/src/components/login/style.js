@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import imgLogin from '../../images/background-login.jpeg';
 
-const LoginContainer = styled.div`
+export const LoginContainer = styled.div`
   align-items: center;
   background-blend-mode: darken;
   background-color: #00000078;
@@ -15,6 +15,7 @@ const LoginContainer = styled.div`
   width: 100%;
 
     div {
+      margin-top: 26px;
       padding-left: 30px;
       width: 320px;
     }
@@ -31,18 +32,20 @@ const LoginContainer = styled.div`
 
     form {
       align-items: center;
-      backdrop-filter: blur(1.6679px);
       background: linear-gradient(180deg, rgba(29, 37, 39, 0.6) 15.42%, rgba(29, 37, 39, 0.552) 35.73%, rgba(29, 37, 39, 0.156) 78.67%, rgba(29, 37, 39, 0) 100%);
+      border-radius: 8px;
       display: flex;
       flex-direction: column;
       height: 280px;
-      height: 359px;
+      height: 290px;
       justify-content: center;
+      position: relative;
       row-gap: 15px;
       width: 80%;
     }
 
     input {
+      border-radius: 8px;
       font-size: var(--font-size-s);
       height: 50px;
       padding-left: 15px;
@@ -50,10 +53,25 @@ const LoginContainer = styled.div`
     }
 
     button {
+      background-color: #cc1a39;
+      border-radius: 8px;
       font-size: var(--font-size-s);
       height: 50px;
       width: 80%;
+      color: #fff;
+
+        &:disabled {
+          background-color: #cc1a3966;
+        }
     }
 `;
 
-export default LoginContainer;
+export const Message = styled.p`
+  font-size: var(--font-size-s);
+  color: #fff;
+  position: absolute;
+  top: 86%;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+`;
