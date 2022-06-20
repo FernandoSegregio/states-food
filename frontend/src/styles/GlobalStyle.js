@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
 
     /* font size */
 
+  --font-size-xxs: 0.75rem; /* 14px */
   --font-size-xs: 0.875rem; /* 14px */
   --font-size-s: 1rem; /* 16px */
   --font-size-m: 1.25rem; /* 20px */
