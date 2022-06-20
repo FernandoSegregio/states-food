@@ -32,7 +32,6 @@ export const TextContainer = styled.div`
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  width: 60%;
   color: var(--neutral-color-black-200);
 
   div {
