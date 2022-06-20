@@ -10,7 +10,7 @@ class User {
   async login(req, res) {
     const { email, password } = req.body;
     const { code, token, message } = await userService.login({email, password});
-    if (message) res.status(code).json(message);
+    if (message) res.status(code).json({message});
     return res.status(code).json(token);
   }
 }
