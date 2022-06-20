@@ -21,6 +21,15 @@ class Restaurant {
       return { code: 500, message: error.message };
     }
   }
+  async findDrink(id) {
+    try {
+      const drink = await prisma.menuDrink.findMany({ where: { restaurantId: Number(id) }});
+      if (!drink) return { code: 404, message: 'drink not found' };
+      return { code: 200, drink };
+    } catch (error) {
+      return { code: 500, message: error.message };
+    }
+  }
 }
 
 export default new Restaurant();
