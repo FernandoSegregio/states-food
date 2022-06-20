@@ -6,12 +6,11 @@ class Restaurant {
     if (message) res.status(code).json(message);
     return res.status(code).json(restaurants);
   }
-  async findMeals(req, res) {
+  async findFood(req, res) {
     const { id } = req.params;
-    console.log(id);
-    const { code, meals, message } = await restaurantService.findMeals(id);
+    const { code, food, message } = await restaurantService.findFood(id);
     if (message) res.status(code).json(message);
-    return res.status(code).json(meals);
+    return res.status(code).json(food);
   }
 }
 

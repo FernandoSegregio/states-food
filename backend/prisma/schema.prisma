@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Menu {
+model MenuFood {
   id           Int        @id @default(autoincrement())
   name         String     @db.VarChar(255)
   description  String?
@@ -20,17 +20,17 @@ model Menu {
 }
 
 model Restaurant {
-  id          Int    @id @default(autoincrement())
-  delivery    String @db.VarChar(8)
-  description String @db.VarChar(255)
-  name        String @db.VarChar(255)
-  phone       String @db.VarChar(11)
-  address     String @db.VarChar(255)
-  url_image   String @db.VarChar(255)
-  time        String @db.VarChar(8)
+  id          Int        @id @default(autoincrement())
+  delivery    String     @db.VarChar(8)
+  description String     @db.VarChar(255)
+  name        String     @db.VarChar(255)
+  phone       String     @db.VarChar(11)
+  address     String     @db.VarChar(255)
+  url_image   String     @db.VarChar(255)
+  time        String     @db.VarChar(8)
   rate        Float
-  flag        String @db.VarChar(255)
-  Menu        Menu[]
+  flag        String     @db.VarChar(255)
+  MenuFood    MenuFood[]
 }
 
 model User {

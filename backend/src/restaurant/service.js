@@ -12,11 +12,11 @@ class Restaurant {
       return { code: 500, message: error.message };
     }
   }
-  async findMeals(id) {
+  async findFood(id) {
     try {
-      const meals = await prisma.menu.findMany({ where: { restaurantId: Number(id) }});
-      if (!meals) return { code: 404, message: 'meal not found' };
-      return { code: 200, meals };
+      const food = await prisma.menuFood.findMany({ where: { restaurantId: Number(id) }});
+      if (!food) return { code: 404, message: 'meal not found' };
+      return { code: 200, food };
     } catch (error) {
       return { code: 500, message: error.message };
     }
