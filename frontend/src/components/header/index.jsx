@@ -6,7 +6,7 @@ import StatesFoodsContext from '../../context/StatesFoodsContext';
 
 function Header() {
   const {
-    address, nameUser, setAddress, lat, lng,
+    address, nameUser, setAddress, lat, lng, setFiltered,
   } = useContext(StatesFoodsContext);
 
   const navigate = useNavigate();
@@ -24,7 +24,13 @@ function Header() {
 
   return (
     <HeaderContainer>
-      <button type="button" onClick={() => navigate(-1)}>
+      <button
+        type="button"
+        onClick={() => {
+          setFiltered('');
+          navigate(-1);
+        }}
+      >
         <span className="iconify" data-icon="eva:arrow-back-outline" />
       </button>
       <div>
