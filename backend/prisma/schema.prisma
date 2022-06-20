@@ -13,8 +13,8 @@ datasource db {
 model Menu {
   id           Int        @id @default(autoincrement())
   name         String     @db.VarChar(255)
-  description  String     @db.VarChar(255)
-  price        Float
+  description  String?
+  price        String
   restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
   restaurantId Int
 }
