@@ -83,7 +83,7 @@ const menuFood = [
 const menuDrink = [
   {
     name: "Coca Cola",
-    description: "Refrigerente Coca Cola 600ml",
+    description: "Refrigerante Coca Cola 600ml",
     price: "R$ 9,90",
     restaurantId: 1,
     url_image: "http://localhost:3001/images/cocacola.jpg"
@@ -111,7 +111,7 @@ const menuDrink = [
   },
   {
     name: "Coca Cola",
-    description: "Refrigerente Coca Cola 600ml",
+    description: "Refrigerante Coca Cola 600ml",
     price: "R$ 9,90",
     restaurantId: 2,
     url_image: "http://localhost:3001/images/cocacola.jpg"
@@ -139,7 +139,7 @@ const menuDrink = [
   },
   {
     name: "Coca Cola",
-    description: "Refrigerente Coca Cola 600ml",
+    description: "Refrigerante Coca Cola 600ml",
     price: "R$ 8,50",
     restaurantId: 3,
     url_image: "http://localhost:3001/images/cocacola.jpg"
