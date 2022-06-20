@@ -2,8 +2,8 @@
 CREATE TABLE `Menu` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(255) NOT NULL,
-    `description` VARCHAR(255) NOT NULL,
-    `price` DOUBLE NOT NULL,
+    `description` VARCHAR(191) NULL,
+    `price` VARCHAR(191) NOT NULL,
     `restaurantId` INTEGER NOT NULL,
 
     PRIMARY KEY (`id`)
