@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon .",
-    "start": "npx prisma migrate dev && node src/index.js"
+    "start": "npx prisma migrate dev --name init -y && node src/index.js"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
