@@ -2,7 +2,7 @@ import React from 'react';
 import Restaurants from '../components/restaurant';
 import Footer from '../components/footer';
 
-function ExplorePage() {
+function RestaurantsPage() {
   return (
     <>
       <Restaurants />
@@ -11,4 +11,4 @@ function ExplorePage() {
   );
 }
 
-export default ExplorePage;
+export default RestaurantsPage;
