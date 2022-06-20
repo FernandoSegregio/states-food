@@ -62,7 +62,7 @@ function Login() {
         </button>
       </form>
       <Message>
-        <span className="iconify" data-icon="akar-icons:triangle-alert" />
+        {statusLogin && <span className="iconify" data-icon="akar-icons:triangle-alert" />}
         {statusLogin}
       </Message>
     </LoginContainer>

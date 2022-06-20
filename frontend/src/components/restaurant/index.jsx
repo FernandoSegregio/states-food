@@ -4,14 +4,14 @@ import { getItems } from '../../services/axiosRequest';
 import {
   CardRestaurant,
   DescriptionRestaurant,
-  ExploreContainer,
+  RestaurantContainer,
   FlagImg,
   NameRestaurant,
   RestaurantImg,
   TextContainer,
 } from './style';
 
-function Explore() {
+function Restaurants() {
   const [restaurant, setRestaurant] = useState([]);
 
   async function requestItems() {
@@ -25,7 +25,7 @@ function Explore() {
   }, []);
 
   return (
-    <ExploreContainer>
+    <RestaurantContainer>
       { restaurant && restaurant.map(({
         url_image: imageUrl, description, flag, name, rate, time, delivery,
       }) => (
@@ -54,8 +54,8 @@ function Explore() {
           </div>
         </CardRestaurant>
       ))}
-    </ExploreContainer>
+    </RestaurantContainer>
   );
 }
 
-export default Explore;
+export default Restaurants;
