@@ -20,9 +20,9 @@ class User {
       const secretPassword = md5(password);
       const verifyUser = await this.find(email);
       console.log(verifyUser);
-      if (verifyUser.code === 404) return { code: 404, message: 'Usuário não encontrado' };
+      if (verifyUser.code === 404) return { code: 404, message: 'Usuário ou senha inválidos' };
       if (verifyUser.user.password !== secretPassword) {
-        return { code: 400, message: 'Senha inválida' };
+        return { code: 400, message: 'Usuário ou senha inválidos' };
       }
       const token = jwtGenarator({email});
       return { code: 200, token }
