@@ -67,7 +67,7 @@ export const LoginContainer = styled.div`
 `;
 
 export const Message = styled.p`
-  font-size: var(--font-size-s);
+  font-size: var(--font-size-xs);
   color: #fff;
   position: absolute;
   top: 86%;
