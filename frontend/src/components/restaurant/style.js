@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ExploreContainer = styled.div`
+export const RestaurantContainer = styled.div`
   margin-top: 14px;
   display: flex;
   align-items: center;

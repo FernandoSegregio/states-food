@@ -1,11 +1,11 @@
 import React from 'react';
-import Explore from '../components/explore';
+import Restaurants from '../components/restaurant';
 import Footer from '../components/footer';
 
 function ExplorePage() {
   return (
     <>
-      <Explore />
+      <Restaurants />
       <Footer />
     </>
   );

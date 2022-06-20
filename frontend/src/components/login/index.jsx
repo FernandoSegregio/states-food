@@ -22,7 +22,7 @@ function Login() {
     const user = await postItems('/login', login);
     localStorage.setItem('token', JSON.stringify(user.data));
     if (user.data.message) setStatusLogin(user.data.message);
-    if (user.status === 200) return navigate('/explore');
+    if (user.status === 200) return navigate('/restaurants');
     return user;
   }
 
@@ -62,7 +62,7 @@ function Login() {
         </button>
       </form>
       <Message>
-        <span className="iconify" data-icon="akar-icons:triangle-alert" />
+        {statusLogin && <span className="iconify" data-icon="akar-icons:triangle-alert" />}
         {statusLogin}
       </Message>
     </LoginContainer>

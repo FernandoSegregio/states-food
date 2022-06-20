@@ -5,14 +5,14 @@ import {
   Navigate,
 } from 'react-router-dom';
 import Login from './components/login';
-import ExplorePage from './pages/ExplorePage';
+import RestaurantsPage from './pages/RestaurantsPage';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/login" />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/explore" element={<ExplorePage />} />
+      <Route path="/restaurants" element={<RestaurantsPage />} />
     </Routes>
   );
 }
