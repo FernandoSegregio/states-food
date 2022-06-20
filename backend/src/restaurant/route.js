@@ -6,5 +6,6 @@ import controller from './controller.js';
 const router = Router();
 
 router.get('/', tokenValidation, controller.find);
+router.get('/:id', controller.findMeals);
 
 export default router;
