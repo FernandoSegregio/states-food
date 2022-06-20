@@ -21,9 +21,27 @@ class Restaurant {
       return { code: 500, message: error.message };
     }
   }
+  async findAllFood() {
+    try {
+      const food = await prisma.menuFood.findMany();
+      if (!food) return { code: 404, message: 'meal not found' };
+      return { code: 200, food };
+    } catch (error) {
+      return { code: 500, message: error.message };
+    }
+  }
   async findDrink(id) {
     try {
       const drink = await prisma.menuDrink.findMany({ where: { restaurantId: Number(id) }});
+      if (!drink) return { code: 404, message: 'drink not found' };
+      return { code: 200, drink };
+    } catch (error) {
+      return { code: 500, message: error.message };
+    }
+  }
+  async findAllDrink() {
+    try {
+      const drink = await prisma.menuDrink.findMany();
       if (!drink) return { code: 404, message: 'drink not found' };
       return { code: 200, drink };
     } catch (error) {
