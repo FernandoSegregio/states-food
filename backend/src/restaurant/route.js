@@ -5,7 +5,8 @@ import controller from './controller.js';
 
 const router = Router();
 
+router.get('/food/:id', tokenValidation, controller.findFood);
+router.get('/drink/:id', tokenValidation, controller.findDrink);
 router.get('/', tokenValidation, controller.find);
-router.get('/:id', controller.findFood);
 
 export default router;
