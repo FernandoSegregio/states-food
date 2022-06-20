@@ -49,11 +49,23 @@ const restaurantData = [
 
 const menuData = [
   {
-    name: "",
-    description: "",
-    price: "",
-    restaurantId: "",
-  }
+    name: "Feijoada",
+    description: "Arroz, Feijoada, Couve, Laranja",
+    price: "19,90",
+    restaurantId: 1,
+  },
+  {
+    name: "Churrascada",
+    description: "Arroz, Churrasco, Vinagrete",
+    price: "25,90",
+    restaurantId: 2,
+  },
+  {
+    name: "Carne de Sol com Queijo Qualho",
+    description: "Arroz, Carnde de Sol, Feijão Branco",
+    price: "22,90",
+    restaurantId: 3,
+  },
 ]
 
 async function main() {
@@ -69,6 +81,12 @@ async function main() {
       data: r,
     })
     console.log(`Created restaurant with id: ${restaurant.id}`)
+  }
+  for (const m of menuData) {
+    const menu = await prisma.menu.create({
+      data: m,
+    })
+    console.log(`Created menu with id: ${menu.id}`)
   }
   console.log(`Seeding finished.`)
 }
