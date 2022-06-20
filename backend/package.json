@@ -5,7 +5,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "nodemon ."
+    "dev": "nodemon .",
+    "start": "npx prisma migrate dev && node dist/index.js"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
