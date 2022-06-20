@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
+import { useNavigate } from 'react-router-dom';
 import { getItems } from '../../services/axiosRequest';
 import {
   CardRestaurant,
@@ -14,6 +15,8 @@ import {
 function Restaurants() {
   const [restaurant, setRestaurant] = useState([]);
 
+  const navigate = useNavigate();
+
   async function requestItems() {
     const token = JSON.parse(localStorage.getItem('token'));
     const item = await getItems('/restaurant', token);
@@ -27,9 +30,9 @@ function Restaurants() {
   return (
     <RestaurantContainer>
       { restaurant && restaurant.map(({
-        url_image: imageUrl, description, flag, name, rate, time, delivery,
+        url_image: imageUrl, description, flag, name, rate, time, delivery, id,
       }) => (
-        <CardRestaurant key={nanoid()}>
+        <CardRestaurant key={nanoid()} onClick={() => navigate(`/restaurants/${id}`)}>
           <RestaurantImg src={imageUrl} alt={name} />
           <div>
             <FlagImg src={flag} alt="" />
