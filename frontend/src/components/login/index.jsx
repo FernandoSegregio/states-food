@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { postItems } from '../../services/axiosRequest';
-import LoginContainer from './style';
+import { LoginContainer, Message } from './style';
 
 function Login() {
   const [login, setLogin] = useState({ email: '', password: '' });
   const [isDisabled, setIsDisabled] = useState(true);
+  const [statusLogin, setStatusLogin] = useState('');
 
   const handleChange = ({ target: { name, value } }) => {
     setLogin((prevState) => ({
@@ -20,6 +21,7 @@ function Login() {
     e.preventDefault();
     const user = await postItems('/login', login);
     localStorage.setItem('token', JSON.stringify(user.data));
+    if (user.data.message) setStatusLogin(user.data.message);
     if (user.status === 200) return navigate('/explore');
     return user;
   }
@@ -59,6 +61,10 @@ function Login() {
           Entrar
         </button>
       </form>
+      <Message>
+        <span className="iconify" data-icon="akar-icons:triangle-alert" />
+        {statusLogin}
+      </Message>
     </LoginContainer>
   );
 }
