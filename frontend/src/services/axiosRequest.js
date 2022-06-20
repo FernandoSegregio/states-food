@@ -12,9 +12,9 @@ const getItems = async (path, auth) => {
 
 const postItems = async (path, body, auth) => {
   if (!auth) {
-    const { data, status } = await api.post(`${path}`, body)
+    const { data, status, message } = await api.post(`${path}`, body)
       .catch((error) => error.response);
-    return { data, status };
+    return { data, status, message };
   }
 
   if (!body) {
