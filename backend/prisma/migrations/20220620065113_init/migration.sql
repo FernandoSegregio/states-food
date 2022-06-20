@@ -4,6 +4,19 @@ CREATE TABLE `MenuFood` (
     `name` VARCHAR(255) NOT NULL,
     `description` VARCHAR(191) NULL,
     `price` VARCHAR(191) NOT NULL,
+    `url_image` VARCHAR(255) NOT NULL,
+    `restaurantId` INTEGER NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `MenuDrink` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL,
+    `description` VARCHAR(191) NULL,
+    `price` VARCHAR(191) NOT NULL,
+    `url_image` VARCHAR(255) NOT NULL,
     `restaurantId` INTEGER NOT NULL,
 
     PRIMARY KEY (`id`)
@@ -37,3 +50,6 @@ CREATE TABLE `User` (
 
 -- AddForeignKey
 ALTER TABLE `MenuFood` ADD CONSTRAINT `MenuFood_restaurantId_fkey` FOREIGN KEY (`restaurantId`) REFERENCES `Restaurant`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `MenuDrink` ADD CONSTRAINT `MenuDrink_restaurantId_fkey` FOREIGN KEY (`restaurantId`) REFERENCES `Restaurant`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

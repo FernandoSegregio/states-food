@@ -53,20 +53,117 @@ const menuFood = [
   {
     name: "Feijoada",
     description: "Arroz, Feijoada, Couve, Laranja",
-    price: "19,90",
+    price: "R$ 19,90",
     restaurantId: 1,
+    url_image: "http://localhost:3001/images/feijoada.jpg"
+  },
+  {
+    name: "Pão de Queijo",
+    description: "Doze pães de queijo",
+    price: "R$ 16,90",
+    restaurantId: 1,
+    url_image: "http://localhost:3001/images/paodequeijo.jpg"
   },
   {
     name: "Churrascada",
     description: "Arroz, Churrasco, Vinagrete",
-    price: "25,90",
+    price: "R$ 25,90",
     restaurantId: 2,
+    url_image: "http://localhost:3001/images/churrasco.jpg"
   },
   {
-    name: "Carne de Sol com Queijo Qualho",
+    name: "Carne de Sol",
     description: "Arroz, Carnde de Sol, Feijão Branco",
-    price: "22,90",
+    price: "R$ 22,90",
     restaurantId: 3,
+    url_image: "http://localhost:3001/images/carnedesol.jpg"
+  },
+]
+
+const menuDrink = [
+  {
+    name: "Coca Cola",
+    description: "Refrigerente Coca Cola 600ml",
+    price: "R$ 9,90",
+    restaurantId: 1,
+    url_image: "http://localhost:3001/images/cocacola.jpg"
+  },
+  {
+    name: "Água Mineral",
+    description: "Água Mineral 500ml",
+    price: "R$ 4,90",
+    restaurantId: 1,
+    url_image: "http://localhost:3001/images/agua.jpg"
+  },
+  {
+    name: "Suco de Laranja",
+    description: "Suco Natural de Laranja",
+    price: "R$ 6,90",
+    restaurantId: 1,
+    url_image: "http://localhost:3001/images/laranja.png"
+  },
+  {
+    name: "Cafezinho",
+    description: "Café expresso pequeno",
+    price: "R$ 6,90",
+    restaurantId: 1,
+    url_image: "http://localhost:3001/images/cafe.jpg"
+  },
+  {
+    name: "Coca Cola",
+    description: "Refrigerente Coca Cola 600ml",
+    price: "R$ 9,90",
+    restaurantId: 2,
+    url_image: "http://localhost:3001/images/cocacola.jpg"
+  },
+  {
+    name: "Água Mineral",
+    description: "Água Mineral 500ml",
+    price: "R$ 5,30",
+    restaurantId: 2,
+    url_image: "http://localhost:3001/images/agua.jpg"
+  },
+  {
+    name: "Suco de Laranja",
+    description: "Suco Natural de Laranja",
+    price: "R$ 7,90",
+    restaurantId: 2,
+    url_image: "http://localhost:3001/images/laranja.png"
+  },
+  {
+    name: "Cafezinho",
+    description: "Café expresso pequeno",
+    price: "R$ 7,90",
+    restaurantId: 2,
+    url_image: "http://localhost:3001/images/cafe.jpg"
+  },
+  {
+    name: "Coca Cola",
+    description: "Refrigerente Coca Cola 600ml",
+    price: "R$ 8,50",
+    restaurantId: 3,
+    url_image: "http://localhost:3001/images/cocacola.jpg"
+  },
+  {
+    name: "Água Mineral",
+    description: "Água Mineral 500ml",
+    price: "R$ 2,90",
+    restaurantId: 3,
+    url_image: "http://localhost:3001/images/agua.jpg"
+  },
+  {
+    name: "Suco de Laranja",
+    description: "Suco Natural de Laranja",
+    price: "R$ 5,50",
+    restaurantId: 3,
+    url_image: "http://localhost:3001/images/laranja.png"
+  },
+  {
+    name: "Cafezinho",
+    description: "Café expresso pequeno",
+    price: "R$ 3,90",
+    restaurantId: 3,
+    url_image: "http://localhost:3001/images/cafe.jpg"
   },
 ]
 
@@ -84,11 +181,17 @@ async function main() {
     })
     console.log(`Created restaurant with id: ${restaurant.id}`)
   }
-  for (const m of menuFood) {
+  for (const mf of menuFood) {
     const menuFood = await prisma.menuFood.create({
-      data: m,
+      data: mf,
     })
     console.log(`Created menu food with id: ${menuFood.id}`)
+  }
+  for (const md of menuDrink) {
+    const menuDrink = await prisma.menuDrink.create({
+      data: md,
+    })
+    console.log(`Created menu drink with id: ${menuDrink.id}`)
   }
   console.log(`Seeding finished.`)
 }
