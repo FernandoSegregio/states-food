@@ -7,17 +7,21 @@ function StatesFoodsProvider({ children }) {
   const [nameUser, setNameUser] = useState('');
   const [lat, setLat] = useState('');
   const [lng, setLng] = useState('');
+  const [filtered, setFiltered] = useState('');
 
+  
   const context = useMemo(() => ({
     address,
-    setAddress,
     nameUser,
-    setNameUser,
     lat,
-    setLat,
     lng,
+    filtered,
+    setAddress,
+    setNameUser,
+    setLat,
     setLng,
-  }), [address, nameUser, lat, lng]);
+    setFiltered,
+  }), [address, nameUser, lat, lng, filtered,]);
 
   return (
     <StatesFoodsContext.Provider value={context}>
