@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import StatesFoodsContext from './StatesFoodsContext';
 
@@ -9,7 +9,6 @@ function StatesFoodsProvider({ children }) {
   const [lng, setLng] = useState('');
   const [filtered, setFiltered] = useState('');
 
-  
   const context = useMemo(() => ({
     address,
     nameUser,
@@ -21,7 +20,7 @@ function StatesFoodsProvider({ children }) {
     setLat,
     setLng,
     setFiltered,
-  }), [address, nameUser, lat, lng, filtered,]);
+  }), [address, nameUser, lat, lng, filtered]);
 
   return (
     <StatesFoodsContext.Provider value={context}>
