@@ -12,7 +12,9 @@ As primeiras funções implementadas são:
 
 ## Demo
 
-![](./states_food.gif)
+
+![](./frontend/states_food.gif)
+
 
 # Aplicação
 
