@@ -10,6 +10,14 @@ As primeiras funções implementadas são:
 -Campo de busca, podendo buscar pelo nome do restaurante, descrição, nome do prato/bebida e descrição do prato/bebida.
 -Busca de localização do usuário
 
+# Link Aplicação
+
+- Deploy Front-end no Vercel: 
+https://states-food.vercel.app
+
+- Deploy Back-end e banco de dados no Railway:
+https://states-food-production.up.railway.app/
+
 ## Demo
 
 
