@@ -9,7 +9,7 @@ function Login() {
   const [isDisabled, setIsDisabled] = useState(true);
   const [statusLogin, setStatusLogin] = useState('');
 
-  const { setNameUser, setLat, setLng } = useContext(StatesFoodsContext);
+  const { setLat, setLng } = useContext(StatesFoodsContext);
 
   const handleChange = ({ target: { name, value } }) => {
     setLogin((prevState) => ({
@@ -46,14 +46,8 @@ function Login() {
     });
   }
 
-  function getName() {
-    const user = JSON.parse(localStorage.getItem('user'));
-    setNameUser(user.email.split('@')[0]);
-  }
-
   useEffect(() => {
     geoLocation();
-    getName();
   }, []);
 
   return (
@@ -68,12 +62,14 @@ function Login() {
           name="email"
           placeholder="email@email.com"
           onChange={handleChange}
+          value={login.email}
         />
         <input
           type="password"
           name="password"
           placeholder="senha"
           onChange={handleChange}
+          value={login.password}
         />
         <button
           type="submit"
