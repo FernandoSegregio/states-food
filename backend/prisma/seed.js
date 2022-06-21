@@ -3,11 +3,16 @@ import md5 from 'md5'
 
 const prisma = new PrismaClient()
 const secretPassword = md5("123Fred")
+const emailPassword = md5("123456")
 
 const userData = [
   {
     email: 'fred@graodireto.com.br',
     password: secretPassword,
+  },
+  {
+    email: 'emaild@email.com.br',
+    password: emailPassword,
   },
 ]
 
@@ -82,6 +87,20 @@ const menuFood = [
 
 const menuDrink = [
   {
+    name: "Suco de Laranja",
+    description: "Suco Natural de Laranja",
+    price: "R$ 6,90",
+    restaurantId: 1,
+    url_image: `${process.env.VITE_API_URL}images/laranja.png`
+  },
+  {
+    name: "Cafezinho",
+    description: "Café expresso pequeno",
+    price: "R$ 6,90",
+    restaurantId: 1,
+    url_image: `${process.env.VITE_API_URL}images/cafe.jpg`
+  },
+  {
     name: "Coca Cola",
     description: "Refrigerante Coca Cola 600ml",
     price: "R$ 9,90",
@@ -98,15 +117,15 @@ const menuDrink = [
   {
     name: "Suco de Laranja",
     description: "Suco Natural de Laranja",
-    price: "R$ 6,90",
-    restaurantId: 1,
+    price: "R$ 7,90",
+    restaurantId: 2,
     url_image: `${process.env.VITE_API_URL}images/laranja.png`
   },
   {
     name: "Cafezinho",
     description: "Café expresso pequeno",
-    price: "R$ 6,90",
-    restaurantId: 1,
+    price: "R$ 7,90",
+    restaurantId: 2,
     url_image: `${process.env.VITE_API_URL}images/cafe.jpg`
   },
   {
@@ -126,15 +145,15 @@ const menuDrink = [
   {
     name: "Suco de Laranja",
     description: "Suco Natural de Laranja",
-    price: "R$ 7,90",
-    restaurantId: 2,
+    price: "R$ 5,50",
+    restaurantId: 3,
     url_image: `${process.env.VITE_API_URL}images/laranja.png`
   },
   {
     name: "Cafezinho",
     description: "Café expresso pequeno",
-    price: "R$ 7,90",
-    restaurantId: 2,
+    price: "R$ 3,90",
+    restaurantId: 3,
     url_image: `${process.env.VITE_API_URL}images/cafe.jpg`
   },
   {
@@ -150,20 +169,6 @@ const menuDrink = [
     price: "R$ 2,90",
     restaurantId: 3,
     url_image: `${process.env.VITE_API_URL}images/agua.jpg`
-  },
-  {
-    name: "Suco de Laranja",
-    description: "Suco Natural de Laranja",
-    price: "R$ 5,50",
-    restaurantId: 3,
-    url_image: `${process.env.VITE_API_URL}images/laranja.png`
-  },
-  {
-    name: "Cafezinho",
-    description: "Café expresso pequeno",
-    price: "R$ 3,90",
-    restaurantId: 3,
-    url_image: `${process.env.VITE_API_URL}images/cafe.jpg`
   },
 ]
 
