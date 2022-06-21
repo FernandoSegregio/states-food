@@ -16,8 +16,8 @@ const restaurantData = [
     address: 'Rua inconfidentes, Interior de Minas, 399',
     delivery: 'R$ 4,99',
     description: 'Comida Mineira',
-    flag: "http://localhost:3001/images/MG.png",
-    url_image: "http://localhost:3001/images/mineira.jpg",
+    flag: `${process.env.VITE_API_URL}/images/MG.png`,
+    url_image: `${process.env.VITE_API_URL}/images/mineira.jpg`,
     name: 'O Trem Baum Sô',
     phone: '31999995555',
     rate: 5,
@@ -27,8 +27,8 @@ const restaurantData = [
     address: 'Rua dos Gauchos, Sem Numero',
     delivery: 'R$ 8,99',
     description: 'Comida Gaucha',
-    flag: "http://localhost:3001/images/RS.png",
-    url_image: "http://localhost:3001/images/gaucha.jpg",
+    flag: "${/images/RS.png",
+    url_image: `${process.env.VITE_API_URL}/images/gaucha.jpg`,
     name: 'Churrasco Tchêê',
     phone: '51999995555',
     rate: 4.5,
@@ -38,8 +38,8 @@ const restaurantData = [
     address: 'Rua Pernambuco, 882',
     delivery: 'R$ 6,99',
     description: 'Comida Pernambucana',
-    flag: "http://localhost:3001/images/PE.png",
-    url_image: "http://localhost:3001/images/nordeste.jpg",
+    flag: "${/images/PE.png",
+    url_image: `${process.env.VITE_API_URL}/images/nordeste.jpg`,
     name: 'O Nordeste é Aqui',
     phone: '81999998888',
     rate: 4.9,
@@ -55,28 +55,28 @@ const menuFood = [
     description: "Arroz, Feijoada, Couve, Laranja",
     price: "R$ 19,90",
     restaurantId: 1,
-    url_image: "http://localhost:3001/images/feijoada.jpg"
+    url_image: `${process.env.VITE_API_URL}/images/feijoada.jpg`
   },
   {
     name: "Pão de Queijo",
     description: "Doze pães de queijo",
     price: "R$ 16,90",
     restaurantId: 1,
-    url_image: "http://localhost:3001/images/paodequeijo.jpg"
+    url_image: `${process.env.VITE_API_URL}/images/paodequeijo.jpg`
   },
   {
     name: "Churrascada",
     description: "Arroz, Churrasco, Vinagrete",
     price: "R$ 25,90",
     restaurantId: 2,
-    url_image: "http://localhost:3001/images/churrasco.jpg"
+    url_image: `${process.env.VITE_API_URL}/images/churrasco.jpg`
   },
   {
     name: "Carne de Sol",
     description: "Arroz, Carnde de Sol, Feijão Branco",
     price: "R$ 22,90",
     restaurantId: 3,
-    url_image: "http://localhost:3001/images/carnedesol.jpg"
+    url_image: `${process.env.VITE_API_URL}/images/carnedesol.jpg`
   },
 ]
 
@@ -86,84 +86,84 @@ const menuDrink = [
     description: "Refrigerante Coca Cola 600ml",
     price: "R$ 9,90",
     restaurantId: 1,
-    url_image: "http://localhost:3001/images/cocacola.jpg"
+    url_image: `${process.env.VITE_API_URL}/images/cocacola.jpg`
   },
   {
     name: "Água Mineral",
     description: "Água Mineral 500ml",
     price: "R$ 4,90",
     restaurantId: 1,
-    url_image: "http://localhost:3001/images/agua.jpg"
+    url_image: `${process.env.VITE_API_URL}/images/agua.jpg`
   },
   {
     name: "Suco de Laranja",
     description: "Suco Natural de Laranja",
     price: "R$ 6,90",
     restaurantId: 1,
-    url_image: "http://localhost:3001/images/laranja.png"
+    url_image: `${process.env.VITE_API_URL}/images/laranja.png`
   },
   {
     name: "Cafezinho",
     description: "Café expresso pequeno",
     price: "R$ 6,90",
     restaurantId: 1,
-    url_image: "http://localhost:3001/images/cafe.jpg"
+    url_image: `${process.env.VITE_API_URL}/images/cafe.jpg`
   },
   {
     name: "Coca Cola",
     description: "Refrigerante Coca Cola 600ml",
     price: "R$ 9,90",
     restaurantId: 2,
-    url_image: "http://localhost:3001/images/cocacola.jpg"
+    url_image: `${process.env.VITE_API_URL}/images/cocacola.jpg`
   },
   {
     name: "Água Mineral",
     description: "Água Mineral 500ml",
     price: "R$ 5,30",
     restaurantId: 2,
-    url_image: "http://localhost:3001/images/agua.jpg"
+    url_image: `${process.env.VITE_API_URL}/images/agua.jpg`
   },
   {
     name: "Suco de Laranja",
     description: "Suco Natural de Laranja",
     price: "R$ 7,90",
     restaurantId: 2,
-    url_image: "http://localhost:3001/images/laranja.png"
+    url_image: `${process.env.VITE_API_URL}/images/laranja.png`
   },
   {
     name: "Cafezinho",
     description: "Café expresso pequeno",
     price: "R$ 7,90",
     restaurantId: 2,
-    url_image: "http://localhost:3001/images/cafe.jpg"
+    url_image: `${process.env.VITE_API_URL}/images/cafe.jpg`
   },
   {
     name: "Coca Cola",
     description: "Refrigerante Coca Cola 600ml",
     price: "R$ 8,50",
     restaurantId: 3,
-    url_image: "http://localhost:3001/images/cocacola.jpg"
+    url_image: `${process.env.VITE_API_URL}/images/cocacola.jpg`
   },
   {
     name: "Água Mineral",
     description: "Água Mineral 500ml",
     price: "R$ 2,90",
     restaurantId: 3,
-    url_image: "http://localhost:3001/images/agua.jpg"
+    url_image: `${process.env.VITE_API_URL}/images/agua.jpg`
   },
   {
     name: "Suco de Laranja",
     description: "Suco Natural de Laranja",
     price: "R$ 5,50",
     restaurantId: 3,
-    url_image: "http://localhost:3001/images/laranja.png"
+    url_image: `${process.env.VITE_API_URL}/images/laranja.png`
   },
   {
     name: "Cafezinho",
     description: "Café expresso pequeno",
     price: "R$ 3,90",
     restaurantId: 3,
-    url_image: "http://localhost:3001/images/cafe.jpg"
+    url_image: `${process.env.VITE_API_URL}/images/cafe.jpg`
   },
 ]
 
