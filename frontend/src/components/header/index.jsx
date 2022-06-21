@@ -6,7 +6,7 @@ import StatesFoodsContext from '../../context/StatesFoodsContext';
 
 function Header() {
   const {
-    address, nameUser, setAddress, lat, lng, setFiltered,
+    address, nameUser, setAddress, lat, lng, setFiltered, setNameUser,
   } = useContext(StatesFoodsContext);
 
   const navigate = useNavigate();
@@ -18,8 +18,14 @@ function Header() {
     setAddress(street);
   }
 
+  function getName() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    setNameUser(user.email.split('@')[0]);
+  }
+
   useEffect(() => {
     getAdress();
+    getName();
   }, []);
 
   return (
