@@ -39,7 +39,7 @@ Na listagem é possível ser feita com ou sem filtros, ambas contando com pagina
 
 Frontend foi feito com React, e Styled Components.
 
-<!-- # Executando
+# Executando
 
 ## Rodar Localmente
 
@@ -69,23 +69,58 @@ Navegue até o diretório do projeto
   cd grao
 ```
 
-Instando as dependências
+  
+<details>
+  
 
+<summary><b>Back-end</b></summary>
+
+
+Entre na pasta backend
+
+```bash
+  cd backend
+```
+  
+Instalando as dependências
 ```bash
   npm install
 ```
 
-Precisamos dar o build no turborepo. fazendo isso o build é aplicado tanto pro backend como pro frontend
-
+Iniciando o Prisma e populando o banco
 ```bash
-  yarn build
+  npx prisma generate && npx prisma migrate dev
 ```
 
-Agora para rodar o projeto no modo de produção já integrado e funcionando.
+Iniciando o Back-end
+```bash
+ yarn dev
+```
+  
+</details>
+  
+
+<details>
+  
+<summary><b>Fron-end</b></summary>
+  
+Entre na pasta frontend
 
 ```bash
-  yarn start
+  cd frontend
 ```
+  
+Instalando as dependências
+```bash
+  npm install
+```
+
+Iniciando o Front-end
+```bash
+ yarn dev
+```
+</details>
+
 
 ## Pronto agora o projeto já está rodando.
 
@@ -95,7 +130,7 @@ Agora para rodar o projeto no modo de produção já integrado e funcionando.
 ```
 
 
-</details> -->
+</details>
 
 # Tech Stack
 
