@@ -15,6 +15,9 @@ As primeiras funções implementadas são:
 - Deploy Front-end no Vercel: 
 https://states-food.vercel.app
 
+  usuario teste: emaild@email.com.br
+<br/>senha teste: 123456
+
 - Deploy Back-end e banco de dados no Railway:
 https://states-food-production.up.railway.app/
 
