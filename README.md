@@ -66,7 +66,7 @@ Clone o projeto
 Navegue até o diretório do projeto
 
 ```bash
-  cd grao
+  cd states-food
 ```
 
   
@@ -86,6 +86,23 @@ Instalando as dependências
 ```bash
   npm install
 ```
+  
+Criando as variáveis de ambiente
+
+Digite o comando abaixo
+```bash
+  touch .env
+```
+Abra o arquivo e insira as seguintes informações
+```bash
+  
+DATABASE_URL="mysql://root:password@localhost:3306/grao" 
+JWT_SECRET="batatinha"
+VITE_API_URL=http://localhost:3001
+```
+> Onde **root** é seu usuário e **password** é sua senha.
+  
+
 
 Iniciando o Prisma e populando o banco
 ```bash
@@ -94,7 +111,7 @@ Iniciando o Prisma e populando o banco
 
 Iniciando o Back-end
 ```bash
- yarn dev
+ npm run dev
 ```
   
 </details>
@@ -102,12 +119,22 @@ Iniciando o Back-end
 
 <details>
   
-<summary><b>Fron-end</b></summary>
+<summary><b>Front-end</b></summary>
   
 Entre na pasta frontend
 
 ```bash
   cd frontend
+```
+  
+Digite o comando abaixo
+```bash
+  touch .env
+```
+Abra o arquivo e insira as seguintes informações
+```bash
+VITE_API_URL=http://localhost:3001/
+VITE_YOUR_KEY_GOOGLE=[insira aqui sua key da api de localização do google]
 ```
   
 Instalando as dependências
@@ -117,12 +144,12 @@ Instalando as dependências
 
 Iniciando o Front-end
 ```bash
- yarn dev
+ npm run dev
 ```
 </details>
 
 
-## Pronto agora o projeto já está rodando.
+## Agora o projeto já está rodando.
 
 ```bash
   Frontend: http://localhost:3000
@@ -154,7 +181,6 @@ Iniciando o Front-end
 - JWT
 - Eslint
 - Git MSG Linter
-- Lint-Staged
 
 ## Authors
 
