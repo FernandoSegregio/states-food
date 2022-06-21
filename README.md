@@ -10,9 +10,19 @@ As primeiras funções implementadas são:
 -Campo de busca, podendo buscar pelo nome do restaurante, descrição, nome do prato/bebida e descrição do prato/bebida.
 -Busca de localização do usuário
 
+# Link Aplicação
+
+- Deploy Front-end no Vercel: 
+https://states-food.vercel.app
+
+- Deploy Back-end e banco de dados no Railway:
+https://states-food-production.up.railway.app/
+
 ## Demo
 
-![](./states_food.gif)
+
+![](./frontend/states_food.gif)
+
 
 # Aplicação
 
@@ -29,7 +39,7 @@ Na listagem é possível ser feita com ou sem filtros, ambas contando com pagina
 
 Frontend foi feito com React, e Styled Components.
 
-<!-- # Executando
+# Executando
 
 ## Rodar Localmente
 
@@ -56,28 +66,90 @@ Clone o projeto
 Navegue até o diretório do projeto
 
 ```bash
-  cd grao
+  cd states-food
 ```
 
-Instando as dependências
+  
+<details>
+  
 
+<summary><b>Back-end</b></summary>
+
+
+Entre na pasta backend
+
+```bash
+  cd backend
+```
+  
+Instalando as dependências
+```bash
+  npm install
+```
+  
+Criando as variáveis de ambiente
+
+Digite o comando abaixo
+```bash
+  touch .env
+```
+Abra o arquivo e insira as seguintes informações
+```bash
+  
+DATABASE_URL="mysql://root:password@localhost:3306/grao" 
+JWT_SECRET="batatinha"
+VITE_API_URL=http://localhost:3001
+```
+> Onde **root** é seu usuário e **password** é sua senha.
+  
+
+
+Iniciando o Prisma e populando o banco
+```bash
+  npx prisma generate && npx prisma migrate dev
+```
+
+Iniciando o Back-end
+```bash
+ npm run dev
+```
+  
+</details>
+  
+
+<details>
+  
+<summary><b>Front-end</b></summary>
+  
+Entre na pasta frontend
+
+```bash
+  cd frontend
+```
+  
+Digite o comando abaixo
+```bash
+  touch .env
+```
+Abra o arquivo e insira as seguintes informações
+```bash
+VITE_API_URL=http://localhost:3001/
+VITE_YOUR_KEY_GOOGLE=[insira aqui sua key da api de localização do google]
+```
+  
+Instalando as dependências
 ```bash
   npm install
 ```
 
-Precisamos dar o build no turborepo. fazendo isso o build é aplicado tanto pro backend como pro frontend
-
+Iniciando o Front-end
 ```bash
-  yarn build
+ npm run dev
 ```
+</details>
 
-Agora para rodar o projeto no modo de produção já integrado e funcionando.
 
-```bash
-  yarn start
-```
-
-## Pronto agora o projeto já está rodando.
+## Agora o projeto já está rodando.
 
 ```bash
   Frontend: http://localhost:3000
@@ -85,7 +157,7 @@ Agora para rodar o projeto no modo de produção já integrado e funcionando.
 ```
 
 
-</details> -->
+</details>
 
 # Tech Stack
 
@@ -109,7 +181,6 @@ Agora para rodar o projeto no modo de produção já integrado e funcionando.
 - JWT
 - Eslint
 - Git MSG Linter
-- Lint-Staged
 
 ## Authors
 
