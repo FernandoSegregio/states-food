@@ -11,7 +11,7 @@ const userData = [
     password: secretPassword,
   },
   {
-    email: 'emaild@email.com.br',
+    email: 'email@email.com.br',
     password: emailPassword,
   },
 ]
