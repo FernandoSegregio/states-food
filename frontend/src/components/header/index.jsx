@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { HeaderContainer, TextHeader } from './style';
@@ -9,28 +9,22 @@ function Header() {
     address, nameUser, setAddress, setFiltered, setNameUser,
   } = useContext(StatesFoodsContext);
 
-  const [lat, setLat] = useState('');
-  const [lng, setLng] = useState('');
-
   const navigate = useNavigate();
 
   function getName() {
     const user = JSON.parse(localStorage.getItem('user'));
-    const latitude = JSON.parse(localStorage.getItem('lat'));
-    const longitude = JSON.parse(localStorage.getItem('lng'));
-    setLat(latitude);
-    setLng(longitude);
     setNameUser(user.email.split('@')[0]);
   }
 
   async function getAdress() {
-    const { VITE_YOUR_KEY_GOOGLE } = import.meta.env;
-    const { data } = (lat && lng) && await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${VITE_YOUR_KEY_GOOGLE}`);
+    const latitude = JSON.parse(localStorage.getItem('lat'));
+    const longitude = JSON.parse(localStorage.getItem('lng'));
 
-    if (lat && lng) {
-      const street = (data.results[4].formatted_address).split(',')[0];
-      setAddress(street);
-    }
+    const { VITE_YOUR_KEY_GOOGLE } = import.meta.env;
+    const { data } = (latitude && longitude) && await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${VITE_YOUR_KEY_GOOGLE}`);
+
+    const street = (data.results[4].formatted_address).split(',')[0];
+    setAddress(street);
   }
 
   useEffect(() => {
