@@ -31,6 +31,10 @@ export const FooterContainer = styled.footer`
       height: 44px;
       width: 44px;
 
+        .iconify--carbon {
+          color:#b8b8bf;
+        }
+
         &.search:focus {
           background-color: #c4c4c5;
         }
