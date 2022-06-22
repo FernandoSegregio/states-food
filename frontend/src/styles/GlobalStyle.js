@@ -51,6 +51,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: Roboto, -apple-system, sans-serif;
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
   }
 `;
 
