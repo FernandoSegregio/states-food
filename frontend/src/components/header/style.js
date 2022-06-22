@@ -15,7 +15,7 @@ export const HeaderContainer = styled.div`
 
       & > svg {
         font-size: 36px;
-        margin-left: -8px;
+        margin-left: -4px;
         color: #808080;
       }
     }
