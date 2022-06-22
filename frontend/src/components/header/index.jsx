@@ -14,7 +14,7 @@ function Header() {
   async function getAdress() {
     const { VITE_YOUR_KEY_GOOGLE } = import.meta.env;
     const { data } = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${VITE_YOUR_KEY_GOOGLE}`);
-    const street = (data.results[1].address_components[0].long_name).split(',')[0];
+    const street = (data.results[4].formatted_address).split(',')[0];
     setAddress(street);
   }
 
