@@ -31,7 +31,7 @@ export const FooterContainer = styled.footer`
       height: 44px;
       width: 44px;
 
-        &:nth-of-type(2):focus {
+        &.search:focus {
           background-color: #c4c4c5;
         }
     }
