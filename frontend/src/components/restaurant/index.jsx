@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { nanoid } from 'nanoid';
 import { useNavigate } from 'react-router-dom';
+import { AiFillStar } from 'react-icons/ai';
+import { BiTime } from 'react-icons/bi';
+import { TbTruckDelivery } from 'react-icons/tb';
 import { getItems } from '../../services/axiosRequest';
 import {
   CardRestaurant,
@@ -10,6 +13,10 @@ import {
   NameRestaurant,
   RestaurantImg,
   TextContainer,
+  DetailsRestaurant,
+  Rate,
+  Time,
+  Delivery,
 } from './style';
 import StatesFoodsContext from '../../context/StatesFoodsContext';
 
@@ -55,27 +62,32 @@ function Restaurants() {
         }) => (
           <CardRestaurant key={nanoid()} onClick={() => navigate(`/restaurants/${id}`)}>
             <RestaurantImg src={imageUrl} alt={name} />
-            <div>
+
+            <div className="title-and_flag">
               { flag && <FlagImg src={flag} alt="" />}
               <TextContainer>
                 <NameRestaurant>{name}</NameRestaurant>
                 <DescriptionRestaurant>{description}</DescriptionRestaurant>
-                <div>
-                  <div>
-                    { rate && <span className="iconify" data-icon="ep:star-filled" />}
+                {rate && time && delivery && (
+                <DetailsRestaurant>
+                  <Rate>
+                    <AiFillStar />
                     <span>{rate}</span>
-                  </div>
-                  <div>
-                    { time && <span className="iconify" data-icon="ic:outline-watch-later" />}
+                  </Rate>
+                  <Time>
+                    <BiTime />
                     <span>{time}</span>
-                  </div>
-                  <div>
-                    { delivery && <span className="iconify delivery" data-icon="iconoir:delivery-truck" />}
+                  </Time>
+                  <Delivery>
+                    <TbTruckDelivery className="delivery" />
                     <span>{delivery}</span>
-                  </div>
-                </div>
+                  </Delivery>
+                </DetailsRestaurant>
+                )}
+
               </TextContainer>
             </div>
+
           </CardRestaurant>
         ),
       )}
