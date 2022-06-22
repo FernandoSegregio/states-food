@@ -22,10 +22,12 @@ function Header() {
     const longitude = JSON.parse(localStorage.getItem('lng'));
 
     const { VITE_YOUR_KEY_GOOGLE } = import.meta.env;
-    const { data } = (latitude && longitude) && await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${VITE_YOUR_KEY_GOOGLE}`);
+    if (latitude && longitude) {
+      const { data } = (latitude && longitude) && await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${VITE_YOUR_KEY_GOOGLE}`);
 
-    const street = (data.results[4].formatted_address).split(',')[0];
-    setAddress(street);
+      const street = (data.results[4].formatted_address).split(',')[0];
+      setAddress(street);
+    }
   }
 
   useEffect(() => {
