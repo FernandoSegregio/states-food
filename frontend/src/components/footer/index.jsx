@@ -1,14 +1,19 @@
 import React, { useState, useContext } from 'react';
+import { useLocation } from 'react-router-dom';
 import StatesFoodsContext from '../../context/StatesFoodsContext';
 // import { useNavigate } from 'react-router-dom';
 import { FooterContainer, SearchBar } from './style';
 
 function Footer() {
   const [isDisable, setIsDisable] = useState(true);
+
   // const navigate = useNavigate();
   const { setFiltered } = useContext(StatesFoodsContext);
 
+  const location = useLocation();
+
   function openSearchBar() {
+    console.log(location);
     return isDisable
       ? setIsDisable(false)
       : setIsDisable(true);
@@ -16,7 +21,11 @@ function Footer() {
 
   return (
     <FooterContainer>
-      <button type="button">
+      <button
+        type="button"
+        className={location.pathname === '/restaurants' && 'selected'}
+        onClick={() => setIsDisable(true)}
+      >
         <span className="iconify" data-icon="charm:home" />
       </button>
       <button type="button">
