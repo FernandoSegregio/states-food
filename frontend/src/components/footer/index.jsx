@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import StatesFoodsContext from '../../context/StatesFoodsContext';
 // import { useNavigate } from 'react-router-dom';
 import { FooterContainer, SearchBar } from './style';
@@ -21,13 +21,15 @@ function Footer() {
 
   return (
     <FooterContainer>
-      <button
-        type="button"
-        className={location.pathname === '/restaurants' && 'selected'}
-        onClick={() => setIsDisable(true)}
-      >
-        <span className="iconify" data-icon="charm:home" />
-      </button>
+      <Link to="/restaurants">
+        <button
+          type="button"
+          className={location.pathname === '/restaurants' && 'selected'}
+          onClick={() => setIsDisable(true)}
+        >
+          <span className="iconify" data-icon="charm:home" />
+        </button>
+      </Link>
       <button type="button">
         <span className="iconify" data-icon="carbon:ticket" />
       </button>
