@@ -36,9 +36,14 @@ function Footer() {
       <button type="button" onClick={() => openSearchBar()}>
         <span className="iconify" data-icon="bi:search" />
       </button>
-      <button type="button">
-        <span className="iconify" data-icon="iconoir:profile-circled" />
-      </button>
+      <Link to="/profile">
+        <button
+          className={location.pathname === '/profile' && 'selected'}
+          type="button"
+        >
+          <span className="iconify" data-icon="iconoir:profile-circled" />
+        </button>
+      </Link>
       <SearchBar
         type="text"
         hidden={isDisable}
