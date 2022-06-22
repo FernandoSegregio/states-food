@@ -11,13 +11,29 @@ export const FooterContainer = styled.footer`
   width: 100%;
   z-index: 2;
 
+    .selected {
+      background-color: #cc1a39;
+
+        svg {
+          color: #fff;
+        }
+    }
+
     svg {
-      font-size: 30px;
+      font-size: 24px;
+      color: #4c4c4c;
     }
 
     button {
       background-color: transparent;
       border: none;
+      border-radius: 50%;
+      height: 44px;
+      width: 44px;
+
+        &:nth-of-type(3):focus {
+          background-color: #c4c4c5;
+        }
     }
 `;
 
