@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { HeaderContainer, TextHeader } from './style';
 import StatesFoodsContext from '../../context/StatesFoodsContext';
@@ -10,6 +10,7 @@ function Header() {
   } = useContext(StatesFoodsContext);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   function getName() {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -35,6 +36,7 @@ function Header() {
   return (
     <HeaderContainer>
       <button
+        className={(location.pathname.includes('/restaurants/')) && 'visible'}
         type="button"
         onClick={() => {
           setFiltered('');
@@ -43,6 +45,7 @@ function Header() {
       >
         <span className="iconify" data-icon="eva:arrow-back-outline" />
       </button>
+
       <div>
         <p>
           Olá!
