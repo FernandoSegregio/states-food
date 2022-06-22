@@ -27,7 +27,10 @@ function Footer() {
         <button
           type="button"
           className={location.pathname === '/restaurants' && 'selected'}
-          onClick={() => setIsDisable(true)}
+          onClick={() => {
+            setIsDisable(true);
+            setFiltered('');
+          }}
         >
           <span className="iconify" data-icon="charm:home" />
         </button>
@@ -46,6 +49,10 @@ function Footer() {
         <button
           className={location.pathname === '/profile' && 'selected'}
           type="button"
+          onClick={() => {
+            setIsDisable(true);
+            setFiltered('');
+          }}
         >
           <span className="iconify" data-icon="iconoir:profile-circled" />
         </button>
@@ -54,7 +61,10 @@ function Footer() {
         type="text"
         hidden={isDisable}
         placeholder="Pesquise por um Restaurante ou Prato"
-        onChange={(e) => setFiltered(e.target.value)}
+        onChange={(e) => {
+          setFiltered(e.target.value);
+        }}
+
       />
     </FooterContainer>
   );
