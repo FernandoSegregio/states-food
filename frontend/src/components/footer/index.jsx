@@ -13,10 +13,12 @@ function Footer() {
   const location = useLocation();
 
   function openSearchBar() {
-    console.log(location);
-    return isDisable
-      ? setIsDisable(false)
-      : setIsDisable(true);
+    if (location.pathname === '/restaurants') {
+      return isDisable
+        ? setIsDisable(false)
+        : setIsDisable(true);
+    }
+    return null;
   }
 
   return (
@@ -33,7 +35,11 @@ function Footer() {
       <button type="button">
         <span className="iconify" data-icon="carbon:ticket" />
       </button>
-      <button type="button" onClick={() => openSearchBar()}>
+      <button
+        className={location.pathname === '/restaurants' && 'search'}
+        type="button"
+        onClick={() => openSearchBar()}
+      >
         <span className="iconify" data-icon="bi:search" />
       </button>
       <Link to="/profile">
