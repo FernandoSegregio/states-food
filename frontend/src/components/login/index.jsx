@@ -22,10 +22,6 @@ function Login() {
     });
   }
 
-  useEffect(() => {
-    geoLocation();
-  }, []);
-
   const navigate = useNavigate();
 
   async function handleLogin(e) {
@@ -33,7 +29,7 @@ function Login() {
     const user = await postItems('/login', login);
     localStorage.setItem('user', JSON.stringify(login));
     localStorage.setItem('token', JSON.stringify(user.data));
-
+    geoLocation();
     if (user.data.message) setStatusLogin(user.data.message);
     if (user.status === 200) return navigate('/restaurants');
     return user;
