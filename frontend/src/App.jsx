@@ -4,15 +4,15 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
-import Login from './components/login';
 import RestaurantsPage from './pages/RestaurantsPage';
 import MealsPage from './pages/MealsPage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/login" />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/login" element={<LoginPage />} />
       <Route path="/restaurants" element={<RestaurantsPage />} />
       <Route path="/restaurants/:id" element={<MealsPage />} />
     </Routes>
