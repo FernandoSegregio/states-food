@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   width: 100%;
@@ -9,9 +9,16 @@ export const HeaderContainer = styled.div`
   padding: 20px;
   justify-content: space-between;
 
+    .visible {
+        visibility: visible;
+    }
+
     button {
       border: none;
       background-color: transparent;
+      visibility: hidden;
+      
+     
 
       & > svg {
         font-size: 36px;
