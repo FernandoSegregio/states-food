@@ -34,9 +34,9 @@ https://states-food-production.up.railway.app/
 ## Backend
 
 Backend desenvolvido utilizando express, prisma e MySQL. possui 2 endpoints sendo possível logar, buscar por restaurantes, buscar por pratos.
-Na parte de criação todas as senhas são criptografas antes de ser armazenadas no banco de dados utilizando a biblioteca MD5.
+As senhas são criptografas no banco de dados utilizando a biblioteca Argon2.
 Foi utilizado um middleware validção do token do usuario logado, utilizando a biblioteca JWT para geração do token na hora do login.
-Na listagem é possível ser feita com ou sem filtros, ambas contando com paginação offset.
+
 
 ## Frontend
 
