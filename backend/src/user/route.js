@@ -5,7 +5,6 @@ import controller from './controller.js';
 
 const route = Router();
 
-route.get('/', tokenValidation, controller.find);
 route.post('/', controller.login);
 
 export default route;
