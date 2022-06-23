@@ -2,8 +2,8 @@ import { PrismaClient } from '@prisma/client'
 import md5 from 'md5'
 
 const prisma = new PrismaClient()
-const secretPassword = md5("123Fred")
-const emailPassword = md5("123456")
+const secretPassword = "$argon2i$v=19$m=16,t=2,p=1$OGNlcEVwTktUTnZnYkFzTA$MYYVY3kbtotkdjyrHXLmQA"
+const emailPassword = "$argon2i$v=19$m=16,t=2,p=1$OGNlcEVwTktUTnZnYkFzTA$Mib7XVYyvehQqRHjNY0vPQ"
 
 const userData = [
   {
