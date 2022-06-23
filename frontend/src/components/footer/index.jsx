@@ -39,7 +39,7 @@ function Footer() {
         <span className="iconify" data-icon="carbon:ticket" />
       </button>
       <button
-        className={location.pathname === '/restaurants' && 'search'}
+        className={location.pathname === '/restaurants' ? 'search' : 'search-disable'}
         type="button"
         onClick={() => openSearchBar()}
       >

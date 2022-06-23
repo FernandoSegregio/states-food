@@ -19,6 +19,12 @@ export const FooterContainer = styled.footer`
         }
     }
 
+    .search-disable {    
+        svg {
+          color:#b8b8bf;            
+        }
+      }
+      
     svg {
       font-size: 24px;
       color: #4c4c4c;
