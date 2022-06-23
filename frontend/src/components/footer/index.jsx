@@ -14,9 +14,12 @@ function Footer() {
 
   function openSearchBar() {
     if (location.pathname === '/restaurants') {
-      return isDisable
-        ? setIsDisable(false)
-        : setIsDisable(true);
+      if (isDisable) {
+        setIsDisable(false);
+      } else {
+        setFiltered('');
+        setIsDisable(true);
+      }
     }
     return null;
   }
@@ -28,8 +31,8 @@ function Footer() {
           type="button"
           className={location.pathname === '/restaurants' && 'selected'}
           onClick={() => {
-            setIsDisable(true);
             setFiltered('');
+            setIsDisable(true);
           }}
         >
           <span className="iconify" data-icon="charm:home" />
