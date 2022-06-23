@@ -182,7 +182,7 @@ Iniciando o Front-end
 - Express
 - Prisma
 - MySQL
-- MD5
+- Argon2
 - JWT
 - Eslint
 - Git MSG Linter
