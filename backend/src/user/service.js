@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import jwtGenarator from '../helpers/jwtGenarator.js';
-import md5 from 'md5';
+import * as argon2 from "argon2";
 
 const prisma = new PrismaClient();
 
@@ -17,11 +17,12 @@ class User {
 
   async login({email, password}) {
     try {
-      const secretPassword = md5(password);
       const verifyUser = await this.find(email);
+      const validatePassword = await argon2.verify(verifyUser.user.password, password);
+      
       console.log(verifyUser);
       if (verifyUser.code === 404) return { code: 404, message: 'Usuário ou senha inválidos' };
-      if (verifyUser.user.password !== secretPassword) {
+      if (!validatePassword) {
         return { code: 400, message: 'Usuário ou senha inválidos' };
       }
       const token = jwtGenarator({email});
