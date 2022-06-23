@@ -10,7 +10,8 @@ import {
 export const MenuContainer = styled.section`
   display: flex;
   flex-direction: column;
-  margin-bottom: 60px;
+  margin: 80px 0;
+  z-index: 2;
 `;
 
 export const Menu = styled.section`
@@ -68,7 +69,7 @@ export const TextContainerTitleMenu = styled(TextContainer)`
 
 export const FlagImgMenu = styled(FlagImg)`
 position: absolute;
-  z-index: 2;
+  z-index: 1;
   left: 5%;
 `;
 

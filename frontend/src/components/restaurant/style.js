@@ -6,8 +6,8 @@ export const RestaurantContainer = styled.div`
   align-items: center;
   flex-direction: column;
   row-gap: 14px;
-  margin-bottom: 80px;
-
+  margin: 80px 0;
+  
     .title-and_flag {
       display: flex;
       justify-content: space-evenly;

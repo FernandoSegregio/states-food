@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  display: flex;
   align-items: center;
-  width: 100%;
-  height: 80px;
+  background-color: #fff;
+  display: flex;
   font-size: 14px;
-  padding: 20px;
+  height: 80px;
   justify-content: space-between;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 
     .visible {
         visibility: visible;
