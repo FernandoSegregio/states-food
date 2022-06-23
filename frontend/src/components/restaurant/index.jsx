@@ -46,8 +46,11 @@ function Restaurants() {
 
   const searchItems = Array.of(...restaurant, ...foods, ...drinks);
 
-  const filter = searchItems.filter((item) => item.name.toLowerCase().includes(filtered)
-  || item.description.toLowerCase().includes(filtered));
+  const filter = searchItems
+    .filter((item) => item.name.toLowerCase()
+      .includes(filtered.toLowerCase())
+  || item.description.toLowerCase()
+    .includes(filtered.toLowerCase()));
 
   const schemaFilter = {
     false: filter,
