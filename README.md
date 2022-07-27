@@ -1,5 +1,7 @@
 # States Food
 
+Obs.: Aplicação fora do ar devido ao banco de dados do Railway ter limite de $5,00 dolares mensais grátis, volta ao ar 01/08/22.
+
 Aplicação consiste no desenvolvimento de um APP de delivery fullstack. Fazendo consultas a dados pré cadastrados no banco de dados.
 
 As primeiras funções implementadas são:
@@ -23,8 +25,7 @@ https://states-food-production.up.railway.app/
 
 ## Demo
 
-
-![](./frontend/states_food.png)
+<img src="./frontend/states_food.png" height='550em'/>
 
 
 # Aplicação
