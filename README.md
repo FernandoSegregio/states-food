@@ -24,7 +24,7 @@ https://states-food-production.up.railway.app/
 ## Demo
 
 
-![](./frontend/states_food.gif)
+![](./frontend/states_food.png)
 
 
 # Aplicação
