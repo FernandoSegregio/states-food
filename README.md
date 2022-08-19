@@ -1,7 +1,5 @@
 # States Food
 
-Obs.: Aplicação fora do ar devido ao banco de dados do Railway ter limite de $5,00 dolares mensais grátis, volta ao ar 01/08/22.
-
 Aplicação consiste no desenvolvimento de um APP de delivery fullstack. Fazendo consultas a dados pré cadastrados no banco de dados.
 
 As primeiras funções implementadas são:
